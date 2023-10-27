@@ -25,23 +25,21 @@ class MonsterCreatorActivity : AppCompatActivity() {
     }
 
     private fun configureSpinnerAdapters() {
-        val newList = listOf("A", "B", "C")
-        var emptyList: List<String> = listOf()
-        val list =  AttributeStore.INTELLIGENCE.toList()
-        this.let {
-            val adapter = ArrayAdapter<AttributeValue>(it, R.layout.simple_spinner_dropdown_item, newList)
-            binding.intelligence.adapter = adapter
-        }
 
-/*        binding.strength.adapter = ArrayAdapter<AttributeValue>(
+        binding.intelligence.adapter = ArrayAdapter(
+            this,
+            android.R.layout.simple_spinner_dropdown_item,
+            AttributeStore.INTELLIGENCE
+        )
+        binding.strength.adapter = ArrayAdapter(
             this,
             android.R.layout.simple_spinner_dropdown_item,
             AttributeStore.UGLINESS
         )
-        binding.endurance.adapter = ArrayAdapter<AttributeValue>(
+        binding.endurance.adapter = ArrayAdapter(
             this,
             android.R.layout.simple_spinner_dropdown_item,
             AttributeStore.EVILNESS
-        )*/
+        )
     }
 }

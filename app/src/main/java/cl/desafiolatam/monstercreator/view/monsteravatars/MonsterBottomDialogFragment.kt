@@ -5,10 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import cl.desafiolatam.monstercreator.R
 import cl.desafiolatam.monstercreator.model.MonsterImage
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
-import kotlinx.android.synthetic.main.layout_monster_bottom_sheet.*
 
 /**
  * Created by Cristian Vidal on 2019-10-02.
@@ -24,6 +24,8 @@ class MonsterBottomDialogFragment : BottomSheetDialogFragment(), MonsterAdapter.
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        val avatarRecyclerView: RecyclerView = view.findViewById(R.id.avatarRecyclerView)
 
         avatarRecyclerView.layoutManager = GridLayoutManager(context, 3)
         avatarRecyclerView.adapter = MonsterAdapter(MonsterStore.MONSTERS_IMAGE, this)

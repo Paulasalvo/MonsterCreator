@@ -2,8 +2,6 @@ apply plugin: 'com.android.application'
 
 apply plugin: 'kotlin-android'
 
-apply plugin: 'kotlin-android-extensions'
-
 apply plugin: 'kotlin-kapt'
 
 android {
@@ -11,7 +9,7 @@ android {
         applicationId "cl.desafiolatam.monstercreator"
         minSdkVersion 23
         targetSdkVersion 31
-        compileSdk 33
+        compileSdk 34
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -27,6 +25,10 @@ android {
         exclude 'META-INF/atomicfu.kotlin_module'
     }
     dataBinding {
+        enabled = true
+    }
+
+    viewBinding {
         enabled = true
     }
 }
